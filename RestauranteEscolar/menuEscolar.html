@@ -46,18 +46,30 @@
     <!-- SECCIÓN MENÚ MENSUAL -->
     <section class="monthly-menu">
         <div class="monthly-menu-container">
-            <h2>📅 Menú Mensual</h2>
+            <h2>📅 Menú Mensual de Almuerzos</h2>
             <div class="monthly-menu-content">
-                <div class="monthly-menu-image">
+                <div class="monthly-menu-image large-image">
                     <div class="image-placeholder">
-                        <img src="../Assets/menu-monthly.png" alt="Menú Mensual" class="menu-img">
+                        <img src="../Assets/menu-monthly.png" alt="Menú Mensual de Almuerzos" class="menu-img">
                     </div>
                 </div>
                 <div class="monthly-menu-text">
-                    <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
-                    <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN MENÚ MENSUAL DE LONCHERAS -->
+    <section class="monthly-menu">
+        <div class="monthly-menu-container">
+            <h2>📅 Menú Mensual de Loncheras</h2>
+            <div class="monthly-menu-content">
+                <div class="monthly-menu-image large-image">
+                    <div class="image-placeholder">
+                        <img src="../Assets/menu-snacks-monthly.png" alt="Menú Mensual de Loncheras" class="menu-img">
+                    </div>
+                </div>
+                <div class="monthly-menu-text">
         </div>
     </section>
 
@@ -72,6 +84,25 @@
                 <div class="daily-plate-info">
                     <h3 id="plateDayName">Nombre del Plato</h3>
                     <p id="plateDayDescription">Descripción del plato del día</p>
+                    <p class="plate-date">
+                        <strong>Día:</strong> <span id="currentDate"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN LONCHERA DEL DÍA -->
+    <section class="daily-plate">
+        <div class="daily-plate-container">
+            <h2>🍱 Lonchera del Día</h2>
+            <div class="daily-plate-content">
+                <div class="daily-plate-image">
+                    <img id="snackDayImage" src="" alt="Lonchera del Día" class="plate-img">
+                </div>
+                <div class="daily-plate-info">
+                    <h3 id="snackDayName">Nombre de la Lonchera</h3>
+                    <p id="snackDayDescription">Descripción de la lonchera del día</p>
                     <p class="plate-date">
                         <strong>Día:</strong> <span id="currentDate"></span>
                     </p>

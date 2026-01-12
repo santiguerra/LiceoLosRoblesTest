@@ -1,92 +1,56 @@
-// Array de platos para cada día de la semana (0 = Domingo, 1 = Lunes, ... 6 = Sábado)
-const dailyPlates = [
-    {
-        day: "Domingo",
-        name: "Pollo con Arroz",
-        description: "Delicioso pollo tierno acompañado de arroz blanco esponjoso, vegetales frescos y una deliciosa salsa casera.",
-        image: "../Assets/plate-sunday.jpg"
-    },
-    {
-        day: "Lunes",
-        name: "Pasta a la Bolognesa",
-        description: "Pasta fresca con una deliciosa salsa bolognesa hecha con carne molida, tomate natural y especias. Acompañada de verduras y queso parmesano.",
-        image: "../Assets/plate-monday.jpg"
-    },
-    {
-        day: "Martes",
-        name: "Salmón a la Mantequilla",
-        description: "Filete de salmón fresco cocinado a la mantequilla con limón, acompañado de brócoli al vapor y puré de papas casero.",
-        image: "../Assets/plate-tuesday.jpg"
-    },
-    {
-        day: "Miércoles",
-        name: "Tacos de Carne Molida",
-        description: "Deliciosos tacos rellenos de carne molida sazonada, lechuga fresca, queso fundido y salsa casera. Acompañados de arroz y frijoles.",
-        image: "../Assets/plate-wednesday.jpg"
-    },
-    {
-        day: "Jueves",
-        name: "Pechuga de Pollo Empanizada",
-        description: "Pechuga de pollo crujiente empanizada, acompañada de papas al horno y ensalada fresca con aderezo casero.",
-        image: "../Assets/plate-thursday.jpg"
-    },
-    {
-        day: "Viernes",
-        name: "Pizza Casera",
-        description: "Pizza hecha en casa con masa crujiente, salsa de tomate fresca, queso derretido y variedad de ingredientes. Perfecta para el fin de semana.",
-        image: "../Assets/plate-friday.jpg"
-    },
-    {
-        day: "Sábado",
-        name: "Hamburguesa Gourmet",
-        description: "Hamburguesa jugosa con pan artesanal tostado, carne de res de primera calidad, lechuga, tomate, queso cheddar y salsa especial.",
-        image: "../Assets/plate-saturday.jpg"
-    }
-];
+// Datos de platos del día por día de la semana
+const dailyPlates = {
+    1: { name: "Pasta a la Bolognesa", description: "Deliciosa pasta con salsa de carne casera, queso parmesano y ensalada fresca", image: "../Assets/plato-lunes.png" },
+    2: { name: "Pollo Asado", description: "Pollo tierno asado con papas al horno y verduras de temporada", image: "../Assets/plato-martes.png" },
+    3: { name: "Arroz con Pollo", description: "Arroz amarillo con pollo jugoso, zanahoria, guisantes y caldo casero", image: "../Assets/plato-miercoles.png" },
+    4: { name: "Carne Guisada", description: "Carne tierna guisada con papas, zanahoria y salsa deliciosa", image: "../Assets/plato-jueves.png" },
+    5: { name: "Pescado a la Mantequilla", description: "Pescado fresco a la mantequilla con limón, arroz blanco y ensalada", image: "../Assets/plato-viernes.png" }
+};
 
-// Función para obtener el plato del día actual
-function getDailyPlate() {
-    const today = new Date();
-    const dayOfWeek = today.getDay();
-    return dailyPlates[dayOfWeek];
+// Datos de loncheras del día por día de la semana
+const dailySnacks = {
+    1: { name: "Sandwich de Jamón y Queso", description: "Pan integral con jamón de pavo, queso fresco, tomate y lechuga", image: "../Assets/lonchera-lunes.png" },
+    2: { name: "Frutas Variadas", description: "Manzana, plátano, uva y naranja fresca picada", image: "../Assets/lonchera-martes.png" },
+    3: { name: "Yogurt con Granola", description: "Yogurt natural con granola casera y frutos secos", image: "../Assets/lonchera-miercoles.png" },
+    4: { name: "Quesadillas", description: "Tortillas de maíz rellenas de queso fundido y jamón", image: "../Assets/lonchera-jueves.png" },
+    5: { name: "Galletas Integrales y Leche", description: "Galletas caseras integrales con vaso de leche fría", image: "../Assets/lonchera-viernes.png" }
+};
+
+// Función para obtener el día de la semana (1-5, lunes-viernes)
+function getWeekday() {
+    const day = new Date().getDay();
+    return day === 0 ? 5 : day; // Domingo = 5 (viernes), lunes-viernes = 1-5
 }
 
-// Función para formatear la fecha actual
-function formatCurrentDate() {
-    const today = new Date();
+// Función para formatear la fecha
+function formatDate(date) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return today.toLocaleDateString('es-ES', options);
+    return date.toLocaleDateString('es-ES', options);
 }
 
-// Función para cargar el plato del día en la página
+// Función para cargar el plato del día
 function loadDailyPlate() {
-    const plate = getDailyPlate();
+    const weekday = getWeekday();
+    const plate = dailyPlates[weekday] || dailyPlates[1];
     
-    // Actualizar imagen
-    const plateImage = document.getElementById('plateDayImage');
-    if (plateImage) {
-        plateImage.src = plate.image;
-        plateImage.alt = plate.name;
-    }
-    
-    // Actualizar nombre del plato
-    const plateName = document.getElementById('plateDayName');
-    if (plateName) {
-        plateName.textContent = plate.name;
-    }
-    
-    // Actualizar descripción
-    const plateDescription = document.getElementById('plateDayDescription');
-    if (plateDescription) {
-        plateDescription.textContent = plate.description;
-    }
-    
-    // Actualizar fecha
-    const currentDate = document.getElementById('currentDate');
-    if (currentDate) {
-        currentDate.textContent = formatCurrentDate();
-    }
+    document.getElementById('plateDayImage').src = plate.image;
+    document.getElementById('plateDayName').textContent = plate.name;
+    document.getElementById('plateDayDescription').textContent = plate.description;
+    document.getElementById('currentDate').textContent = formatDate(new Date());
 }
 
-// Cargar el plato cuando la página carga
-document.addEventListener('DOMContentLoaded', loadDailyPlate);
+// Función para cargar la lonchera del día
+function loadDailySnack() {
+    const weekday = getWeekday();
+    const snack = dailySnacks[weekday] || dailySnacks[1];
+    
+    document.getElementById('snackDayImage').src = snack.image;
+    document.getElementById('snackDayName').textContent = snack.name;
+    document.getElementById('snackDayDescription').textContent = snack.description;
+}
+
+// Cargar datos al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    loadDailyPlate();
+    loadDailySnack();
+});
