@@ -1,0 +1,192 @@
+/* MENÚ ESCOLAR - ESTILOS */
+
+.menu-header {
+    background: linear-gradient(135deg, #8FBC8F 0%, #90EE90 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.menu-header .logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.menu-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-header .subtitulo {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* MENÚ MENSUAL */
+.monthly-menu {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.monthly-menu-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.monthly-menu h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.monthly-menu-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.monthly-menu-image {
+    display: flex;
+    justify-content: center;
+}
+
+.monthly-menu-image .image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #666;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.monthly-menu-image .menu-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.monthly-menu-text {
+    padding: 20px;
+}
+
+.monthly-menu-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* PLATO DEL DÍA */
+.daily-plate {
+    padding: 60px 20px;
+    background-color: white;
+}
+
+.daily-plate-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.daily-plate h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.daily-plate-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: linear-gradient(135deg, #fff9e6 0%, #fffef0 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.daily-plate-image {
+    display: flex;
+    justify-content: center;
+}
+
+.plate-img {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.daily-plate-info {
+    padding: 20px;
+}
+
+.daily-plate-info h3 {
+    font-size: 1.8rem;
+    color: #2d5016;
+    margin-bottom: 15px;
+}
+
+.daily-plate-info p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.plate-date {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .monthly-menu-content,
+    .daily-plate-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .monthly-menu h2,
+    .daily-plate h2 {
+        font-size: 1.5rem;
+    }
+
+    .daily-plate-image {
+        order: -1;
+    }
+
+    .plate-img {
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .monthly-menu-image .image-placeholder {
+        max-width: 300px;
+    }
+}
