@@ -50,7 +50,7 @@
             <div class="monthly-menu-content">
                 <div class="monthly-menu-image large-image">
                     <div class="image-placeholder">
-                        <img src="../Assets/menu-monthly.png" alt="Menú Mensual de Almuerzos" class="menu-img">
+                        <embed src="../Assets/Comidas/Almuerzos/AlmuerzosEnero.pdf" alt="Menú Mensual de Almuerzos" class="menu-img" type="application/pdf">
                     </div>
                 </div>
                 <div class="monthly-menu-text">
@@ -66,10 +66,12 @@
             <div class="monthly-menu-content">
                 <div class="monthly-menu-image large-image">
                     <div class="image-placeholder">
-                        <img src="../Assets/menu-snacks-monthly.png" alt="Menú Mensual de Loncheras" class="menu-img">
+                        <embed src="../Assets/Comidas/Loncheras/LoncherasEnero.pdf" alt="Menú Mensual de Loncheras" class="menu-img" type="application/pdf">
                     </div>
                 </div>
                 <div class="monthly-menu-text">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -79,7 +81,7 @@
             <h2>🍽️ Plato del Día</h2>
             <div class="daily-plate-content">
                 <div class="daily-plate-image">
-                    <img id="plateDayImage" src="" alt="Plato del Día" class="plate-img">
+                    <img id="plateDayImage" src="../Assets/Comidas/Almuerzos/A19.png" alt="Plato del Día" class="plate-img" onerror="handleImageError(this)">
                 </div>
                 <div class="daily-plate-info">
                     <h3 id="plateDayName">Nombre del Plato</h3>
@@ -98,13 +100,13 @@
             <h2>🍱 Lonchera del Día</h2>
             <div class="daily-plate-content">
                 <div class="daily-plate-image">
-                    <img id="snackDayImage" src="" alt="Lonchera del Día" class="plate-img">
+                    <img id="snackDayImage" src="../Assets/Comidas/Loncheras/L19.png" alt="Lonchera del Día" class="plate-img" onerror="handleImageError(this)">
                 </div>
                 <div class="daily-plate-info">
                     <h3 id="snackDayName">Nombre de la Lonchera</h3>
                     <p id="snackDayDescription">Descripción de la lonchera del día</p>
                     <p class="plate-date">
-                        <strong>Día:</strong> <span id="currentDate"></span>
+                        <strong>Día:</strong> <span id="snackCurrentDate"></span>
                     </p>
                 </div>
             </div>
