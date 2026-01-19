@@ -14,7 +14,7 @@ body {
 
 /* MENÚ ESCOLAR - ESTILOS */
 .menu-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #B0CD5E 0%, #0194CF 100%);
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -269,7 +269,8 @@ body {
     }
 
     .monthly-menu-image .image-placeholder {
-        max-width: 300px;
+        height: 600px;
+        max-height: none;
     }
 
     .monthly-menu {
@@ -301,5 +302,9 @@ body {
     .monthly-menu-container h2,
     .daily-plate-container h2 {
         font-size: 20px;
+    }
+
+    .monthly-menu-image .image-placeholder {
+        height: 500px;
     }
 }
